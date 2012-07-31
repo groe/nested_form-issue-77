@@ -1,18 +1,7 @@
 <%= simple_nested_form_for(@user) do |f| %>
 	<%= f.input :name %>
 
-	<%= f.fields_for :user_hobbies do |f2| %>
-		<%= f2.association :hobby %>
-
-		<%= f2.fields_for :user_hobby_locations do |f3| %>
-			<%= f3.association :location %>
-			<%= f3.link_to_remove "Remove" %>
-		<% end %>
-		<p><%= f2.link_to_add "Add", :user_hobby_locations %></p>
-
-
-		<%= f2.link_to_remove "Remove" %>
-	<% end %>
+	<%= f.fields_for :user_hobbies %>
 	<p><%= f.link_to_add "Add", :user_hobbies %></p>
 
 	<%= f.button :submit %>

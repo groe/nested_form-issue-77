@@ -1,0 +1,6 @@
+<%= f.association :hobby %>
+
+<%= f.fields_for :user_hobby_locations %>
+<p><%= f.link_to_add "Add", :user_hobby_locations %></p>
+
+<%= f.link_to_remove "Remove" %>
